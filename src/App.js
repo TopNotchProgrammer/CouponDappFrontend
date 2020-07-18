@@ -1,12 +1,13 @@
 import React from 'react';
-import './App.css';
+import SearchBox from './SearchBox'
 
 function App() {
   return (
-    <div className="App">
-      Test
+    <div>
+      <br />
+      <SearchBox />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
