@@ -29,6 +29,7 @@ class SearchBox extends React.Component {
               <Form.Control
                 type="text"
                 placeholder="Search"
+                className="form-control-lg"
                 onChange={this.handleChange}
                 value={this.state.value}
               />
