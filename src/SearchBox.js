@@ -1,6 +1,5 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form'
-import { Container } from 'react-bootstrap'
 import { Row } from 'react-bootstrap'
 import { Col } from 'react-bootstrap'
 import { InputGroup } from 'react-bootstrap'
@@ -24,8 +23,7 @@ class SearchBox extends React.Component {
 
   render() {
     return (
-      <Container>
-        <Row>
+        <Row className={this.props.className}>
           <Col>
             <InputGroup>
               <Form.Control
@@ -42,7 +40,6 @@ class SearchBox extends React.Component {
             </InputGroup>
           </Col>
         </Row>
-      </Container>
     )
   }
 }
