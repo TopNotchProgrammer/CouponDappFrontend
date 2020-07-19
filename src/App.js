@@ -12,7 +12,7 @@ function App() {
         Coupon Dapp
       </h1>
       <SearchBox className="my-auto h-100 pb-5" />
-      <MenuBottom className="mt-5 mb-5 pt-5 text-center overflow-auto" />
+      <MenuBottom className="mt-5 mb-5 pt-5 text-center" />
     </Container>
   )
 }
