@@ -1,20 +1,20 @@
 import React from 'react';
-import { Container } from 'react-bootstrap'
-import SearchBox from './SearchBox'
-import MenuTop from './MenuTop'
-import MenuBottom from './MenuBottom'
+import SearchPage from './search/SearchPage';
 
-function App() {
-  return (
-    <Container>
-      <MenuTop className="mt-5 mb-5" />
-      <h1 className="display-2 mt-5 mb-5 pt-5 text-center">
-        Coupon Dapp
-      </h1>
-      <SearchBox className="my-auto h-100 pb-5" />
-      <MenuBottom className="mt-5 mb-5 pt-5 text-center" />
-    </Container>
-  )
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      isLoggedIn: false,
+      userName: "Anonymous"
+    }
+  }
+
+  render() {
+    return (
+      <SearchPage />
+    )
+  }
 }
 
 export default App

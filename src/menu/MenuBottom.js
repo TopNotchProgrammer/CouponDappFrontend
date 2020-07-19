@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row } from 'react-bootstrap'
 import { Col } from 'react-bootstrap'
-import './MenuBottom.css'
+import './MenuBottom.scss'
 
 function MenuBottom(props) {
   return (
@@ -9,7 +9,11 @@ function MenuBottom(props) {
       <Col>
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => {
           return (
-            <a href={"#link" + i} className="ml-2 mr-2 text-nowrap" key={i}>
+            <a
+              href={"#link" + i}
+              className="ml-2 mr-2 text-nowrap"
+              key={i}
+            >
               Link {i}
             </a>
           )
