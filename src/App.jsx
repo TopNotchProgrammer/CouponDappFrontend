@@ -2,7 +2,6 @@ import React from 'react';
 import SearchPage from './search/SearchPage';
 import LogIn from './modal/LogIn';
 import NoMetamask from './modal/NoMetaMask';
-import { logRoles } from '@testing-library/react';
 
 class App extends React.Component {
   constructor(props) {
