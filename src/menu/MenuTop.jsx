@@ -4,15 +4,13 @@ import { Col } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
 import { CartCheck } from 'react-bootstrap-icons';
 import { Bell } from 'react-bootstrap-icons';
-import { Person } from 'react-bootstrap-icons';
+import User from './User'
 
 function MenuTop(props) {
   return (
     <Row className={props.className}>
       <Col>
-        <Button className="float-right ml-2">
-          <Person />
-        </Button>
+        <User address={props.address} />
         <Button className="float-right ml-2">
           <Bell />
         </Button>

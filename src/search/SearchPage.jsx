@@ -7,7 +7,7 @@ import MenuBottom from '../menu/MenuBottom'
 function SearchPage(props) {
   return (
     <Container>
-      <MenuTop className="mt-5 mb-5" />
+      <MenuTop className="mt-5 mb-5" address={props.address}/>
       <h1 className="display-2 mt-5 mb-5 pt-5 text-center">
         Coupon Dapp
       </h1>
