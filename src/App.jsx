@@ -16,8 +16,17 @@ class App extends React.Component {
     this.componentDidMount = this.componentDidMount.bind(this);
   }
 
+  hasMetaMask() {
+    return typeof window.ethereum !== 'undefined'
+  }
+
   componentDidMount() {
     let app = this
+
+    if(!app.hasMetaMask()) {
+      return
+    }
+
     window.ethereum.on('accountsChanged', function (accounts) {
       if (accounts.length > 0) {
         app.setState({
@@ -48,7 +57,7 @@ class App extends React.Component {
   }
 
   render() {
-    if (typeof window.ethereum !== 'undefined') {
+    if(this.hasMetaMask()) {
       if (this.state.isLoggedIn) {
         return <SearchPage address={this.state.address} />
       } else {
