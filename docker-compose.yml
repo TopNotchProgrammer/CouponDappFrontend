@@ -3,14 +3,18 @@ services:
   gnache:
     container_name: coupon_dapp_gnache
     build: docker/gnache
+    working_dir: /app/CouponDappBackend
+    command: ./startup.sh
     ports:
     - "8545:8545"
-  react:
-    container_name: coupon_dapp_react
-    tty: true
-    build: .
-    ports:
-    - "3000:3000"
     volumes:
-      - '.:/app'
-      - '/app/node_modules'
+      - './docker/gnache/startup.sh:/app/CouponDappBackend/startup.sh'
+  # react:
+  #   container_name: coupon_dapp_react
+  #   tty: true
+  #   build: .
+  #   ports:
+  #   - "3000:3000"
+  #   volumes:
+  #     - '.:/app'
+  #     - '/app/node_modules'
