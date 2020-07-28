@@ -11,9 +11,11 @@ function NoMetamask(props) {
           <a
             target="_blank"
             href="https://metamask.io/"
+            rel="noopener noreferrer"
           >
             MetaMask
-          </a> extension is required to use this app.
+          </a> extension is required
+          to use this app.
         </p>
       </Alert>
     </Container>

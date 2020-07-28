@@ -38,6 +38,5 @@
         ]
     },
     "devDependencies": {
-        "ganache-cli": "^6.9.1"
     }
 }

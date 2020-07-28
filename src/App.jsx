@@ -30,7 +30,11 @@ class App extends React.Component {
 
   content() {
     if (this.state.isLoggedIn) {
-      return <SearchPage address={this.state.address} />
+      return (
+        <SearchPage
+          address={this.state.address}
+        />
+      )
     } else {
       return <LogIn onLogIn={this.logIn} />
     }
@@ -38,7 +42,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <MetaMask onLogIn={this.logIn} onLogOut={this.logOut}>
+      <MetaMask
+        onLogIn={this.logIn}
+        onLogOut={this.logOut}
+      >
         {this.content()}
       </MetaMask>
     )

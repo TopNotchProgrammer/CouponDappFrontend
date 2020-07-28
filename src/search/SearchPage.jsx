@@ -4,15 +4,37 @@ import SearchBox from './SearchBox'
 import MenuTop from '../menu/MenuTop'
 import MenuBottom from '../menu/MenuBottom'
 
+function h1Class() {
+  return [
+    'display-2',
+    'mt-5',
+    'mb-5',
+    'pt-5',
+    'text-center'
+  ].join(' ')
+}
+
+function menuClass() {
+  return [
+    'mt-5',
+    'mb-5',
+    'pt-5',
+    'text-center'
+  ].join(' ')
+}
+
 function SearchPage(props) {
   return (
     <Container>
-      <MenuTop className="mt-5 mb-5" address={props.address}/>
-      <h1 className="display-2 mt-5 mb-5 pt-5 text-center">
+      <MenuTop
+        className="mt-5 mb-5"
+        address={props.address}
+      />
+      <h1 className={h1Class()}>
         Coupon Dapp
       </h1>
       <SearchBox className="h-100 pb-5" />
-      <MenuBottom className="mt-5 mb-5 pt-5 text-center" />
+      <MenuBottom className={menuClass()} />
     </Container>
   )
 }

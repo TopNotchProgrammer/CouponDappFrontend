@@ -42,7 +42,10 @@ class SearchBox extends React.Component {
               value={this.state.value}
             />
             <InputGroup.Prepend>
-              <InputGroup.Text className="btn" onClick={this.handleClick}>
+              <InputGroup.Text
+                className="btn"
+                onClick={this.handleClick}
+              >
                 <Search />
               </InputGroup.Text>
             </InputGroup.Prepend>
