@@ -9,6 +9,7 @@ services:
     - "8545:8545"
     volumes:
       - './docker/gnache/startup.sh:/app/CouponDappBackend/startup.sh'
+      - './src/contract/dev:/app/CouponDappBackend/build/contracts'
   react:
     container_name: coupon_dapp_react
     tty: true

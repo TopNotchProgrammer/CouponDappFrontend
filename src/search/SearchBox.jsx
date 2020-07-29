@@ -19,7 +19,10 @@ class SearchBox extends React.Component {
   }
 
   handleClick() {
-    alert(this.state.value)
+    console.log(this.state.value)
+    this.props.contract.methods.getInventory().call().then((res) => {
+      console.log(res)
+    })
   }
 
   handleEnter(e) {

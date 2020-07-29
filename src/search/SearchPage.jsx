@@ -33,7 +33,10 @@ function SearchPage(props) {
       <h1 className={h1Class()}>
         Coupon Dapp
       </h1>
-      <SearchBox className="h-100 pb-5" />
+      <SearchBox
+        className="h-100 pb-5"
+        contract={props.contract}
+      />
       <MenuBottom className={menuClass()} />
     </Container>
   )

@@ -9,7 +9,6 @@ RUN git clone https://github.com/topnotchprogrammer-com/CouponDappBackend
 COPY ./truffle-config.js ./CouponDappBackend/truffle-config.js
 COPY ./1_initial_migration.js ./CouponDappBackend/migrations/1_initial_migration.js
 COPY ./startup.sh ./CouponDappBackend/startup.sh
-RUN cd ./CouponDappBackend && truffle compile
 
 EXPOSE 8545
 CMD ["ganache-cli",\
