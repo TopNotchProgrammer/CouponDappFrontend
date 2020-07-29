@@ -8,6 +8,7 @@ workflows:
     jobs:
       - heroku/deploy-via-git:
           context: heroku
-    branches:
-      only:
-        - master
+          filters:
+            branches:
+              only:
+                - master
