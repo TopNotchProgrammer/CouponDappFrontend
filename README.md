@@ -43,4 +43,5 @@
 
 ## Production
 
-Production website is hosted on heroku: https://coupon-dapp.herokuapp.com/
+1. Production website is hosted on heroku: https://coupon-dapp.herokuapp.com/
+2. Deployment is automatically made by https://circleci.com for every master push
