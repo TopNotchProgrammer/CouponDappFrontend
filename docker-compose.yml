@@ -17,13 +17,10 @@ services:
     ports:
     - "3000:3000"
     volumes:
-      - '.:/app'
       - '/app/node_modules'
+      - '.:/app'
   ipfs:
     container_name: coupon_dapp_ipfs
     build: docker/ipfs
     ports:
-    - "4001:4001"
-    - "5001:5001"
-    - "8080:8080"
-    - "8081:8081"
+    - "5002:5002"

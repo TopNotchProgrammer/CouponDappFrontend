@@ -1,13 +1,13 @@
 {
     "name": "coupon-dapp",
-    "version": "0.1.0",
+    "version": "1.0.1",
     "private": true,
     "dependencies": {
         "@testing-library/jest-dom": "^4.2.4",
         "@testing-library/react": "^9.3.2",
         "@testing-library/user-event": "^7.1.2",
         "bootstrap": "^4.5.0",
-        "ipfs-api": "^26.1.2",
+        "ipfs-http-client": "^42.0.0",
         "node-sass": "^4.14.1",
         "react": "^16.13.1",
         "react-bootstrap": "^1.2.2",

@@ -1,7 +1,8 @@
-import React from 'react';
-import SearchPage from './search/SearchPage';
-import LogIn from './modal/LogIn';
+import React from 'react'
+import SearchPage from './search/SearchPage'
+import LogIn from './modal/LogIn'
 import MetaMask from './blockchain/MetaMask'
+import Ipfs from './blockchain/Ipfs'
 
 class App extends React.Component {
   constructor(props) {
@@ -12,23 +13,6 @@ class App extends React.Component {
     }
     this.logIn = this.logIn.bind(this);
     this.logOut = this.logOut.bind(this);
-    this.setWeb3 = this.setWeb3.bind(this);
-    this.setContract = this.setContract.bind(this);
-    this.web3 = null
-    this.contrat = null
-  }
-
-  setWeb3(web3) {
-    this.web3 = web3
-    window.web3 = web3 // todo: remove, for testig purposes only
-  }
-
-  setContract(json, address) {
-    this.contract = new this.web3.eth.Contract(
-      json,
-      address
-    )
-    window.contract = this.contract // todo: remove, for testig purposes only
   }
 
   logIn(address) {
@@ -66,7 +50,9 @@ class App extends React.Component {
         setWeb3={this.setWeb3}
         setContract={this.setContract}
       >
-        {this.content()}
+        <Ipfs setIpfs={this.setIpfs}>
+          {this.content()}
+        </Ipfs>
       </MetaMask>
     )
   }

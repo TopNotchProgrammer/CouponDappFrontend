@@ -9,6 +9,7 @@
 5. Install MetaMask browser extension - https://metamask.io/download.html
 6. Select `localhost:8545` network in MetaMask
 7. Open your app http://localhost:3000
+8. Open http://localhost:5002/webui to access IPFS
 
 ### Gnache accounts:
  1. 0x7E5F4552091A69125d5DfCb7b8C2659029395Bdf (1000 ETH)
@@ -35,13 +36,55 @@
 10. 0x0000000000000000000000000000000000000000000000000000000000000010
 
 
-### Contract migration address
+### Contract migration address:
 
 ```
 0x7E5F4552091A69125d5DfCb7b8C2659029395Bdf
+```
+
+### Globally accessible objects:
+1. `window.web3` - https://web3js.readthedocs.io/en/v1.2.11/
+2. `window.contract` - web3 contract connected to our contract
+3. `window.ethereum` - metamask (provided by MetaMask extension)
+4. `window.ipfs` - https://github.com/ipfs/js-ipfs/tree/master/docs/core-api
+
+### Running contract functions:
+
+```
+// send example
+contract.methods.setAccount().send({from: '0x7E5F4552091A69125d5DfCb7b8C2659029395Bdf'}, function(error, result){
+    console.log(result, error)
+})
+
+// call example
+contract.methods.getInventory().call({from: '0x7E5F4552091A69125d5DfCb7b8C2659029395Bdf'}, function(error, result){
+    console.log(result, error)
+})
+contract.methods.showInventory().call({from: '0x7E5F4552091A69125d5DfCb7b8C2659029395Bdf'}, function(error, result){
+    console.log(result, error)
+})
+```
+
+### IPFS:
+
+```
+// send JSON data to IPFS, and log address
+for await (const result of ipfs.add(JSON.stringify({data:"test2"}))) {
+    console.log(result.path);
+}
+
+// retrive JSON data from IPFS
+for await (const file of ipfs.get('QmQTrGWofFgFCzgSzd9PqGFawdqQ5HCrywm2ETv2Dsa1ph')) {
+  let content = ''
+  for await (const chunk of file.content) {
+    content += chunk.toString()
+  }
+  console.log(JSON.parse(content))
+}
 ```
 
 ## Production
 
 1. Production website is hosted on heroku: https://coupon-dapp.herokuapp.com/
 2. Deployment is automatically made by https://circleci.com for every master push
+3. In progress...

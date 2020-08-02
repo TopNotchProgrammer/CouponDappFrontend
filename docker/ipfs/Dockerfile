@@ -1,5 +1,5 @@
-FROM ipfs/go-ipfs
+FROM ipfs/js-ipfs
 
-RUN ipfs init
+EXPOSE 5002
 
-ENTRYPOINT ["ipfs", "daemon"]
+ENTRYPOINT ["jsipfs", "daemon"]

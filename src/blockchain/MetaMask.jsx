@@ -1,7 +1,7 @@
 import NoMetamask from '../modal/NoMetaMask';
 import Web3 from 'web3'
 import React from 'react';
-import Contract from '../contract/dev/couponModify.json'
+import Contract from '../contract/dev/couponModify.json' // dev
 
 // todo: prod build
 class MetaMask extends React.Component {
@@ -17,10 +17,12 @@ class MetaMask extends React.Component {
   componentDidMount() {
     let metamask = this
 
-    metamask.props.setWeb3(new Web3(window.ethereum))
-    metamask.props.setContract(
+    window.web3 = new Web3(window.ethereum)
+    window.contract = new window.web3.eth.Contract(
       Contract.abi,
-      Contract.networks[Object.keys(Contract.networks)[0]].address
+      Contract.networks[
+        Object.keys(Contract.networks)[0]
+      ].address
     )
 
     if (!metamask.hasMetaMask()) {
