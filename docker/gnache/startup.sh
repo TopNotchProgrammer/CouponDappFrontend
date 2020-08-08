@@ -11,9 +11,11 @@ ganache-cli \
     "--account=\"0x0000000000000000000000000000000000000000000000000000000000000009,1000000000000000000000\"" \
     "--account=\"0x0000000000000000000000000000000000000000000000000000000000000010,1000000000000000000000\"" &
 sleep 1
-git stash
-git pull origin master
-mv truffle-config-frontend.js truffle-config.js
+rm -fr CouponDappBackend
+git clone https://github.com/topnotchprogrammer-com/CouponDappBackend
+cp truffle-config-frontend.js CouponDappBackend/truffle-config.js
+cd CouponDappBackend
 truffle compile
 truffle migrate
+cp build/contracts/* ../contracts/
 sleep infinity
