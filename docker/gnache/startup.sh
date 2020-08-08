@@ -15,6 +15,7 @@ rm -fr CouponDappBackend
 git clone https://github.com/topnotchprogrammer-com/CouponDappBackend
 cp truffle-config-frontend.js CouponDappBackend/truffle-config.js
 cd CouponDappBackend
+mv migrations/couponModify.js migrations/2_coupon_migration.js
 truffle compile
 truffle migrate
 cp build/contracts/* ../contracts/
