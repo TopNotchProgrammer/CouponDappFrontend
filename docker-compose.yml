@@ -10,6 +10,7 @@ services:
     volumes:
       - './docker/gnache/startup.sh:/app/startup.sh'
       - './docker/gnache/truffle-config.js:/app/truffle-config-frontend.js'
+      - './docker/gnache/truffle-init.js:/app/truffle-init.js'
       - './src/contract/dev:/app/contracts'
   react:
     container_name: coupon_dapp_react

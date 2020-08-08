@@ -18,5 +18,6 @@ cd CouponDappBackend
 mv migrations/couponModify.js migrations/2_coupon_migration.js
 truffle compile
 truffle migrate
+truffle exec ../truffle-init.js
 cp build/contracts/* ../contracts/
 sleep infinity
