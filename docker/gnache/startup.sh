@@ -11,8 +11,9 @@ ganache-cli \
     "--account=\"0x0000000000000000000000000000000000000000000000000000000000000009,1000000000000000000000\"" \
     "--account=\"0x0000000000000000000000000000000000000000000000000000000000000010,1000000000000000000000\"" &
 sleep 1
-git branch
+git stash
 git pull origin master
+mv truffle-config-frontend.js truffle-config.js
 truffle compile
 truffle migrate
 sleep infinity

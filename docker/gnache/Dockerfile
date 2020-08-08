@@ -6,8 +6,7 @@ RUN npm install -g ganache-cli
 RUN npm install -g truffle
 RUN apk add --no-cache git
 RUN git clone https://github.com/topnotchprogrammer-com/CouponDappBackend
-COPY ./truffle-config.js ./CouponDappBackend/truffle-config.js
-COPY ./1_initial_migration.js ./CouponDappBackend/migrations/1_initial_migration.js
+COPY ./truffle-config.js ./CouponDappBackend/truffle-config-frontend.js
 COPY ./startup.sh ./CouponDappBackend/startup.sh
 
 EXPOSE 8545
